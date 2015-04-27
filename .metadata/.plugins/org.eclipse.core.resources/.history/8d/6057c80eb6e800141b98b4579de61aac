@@ -1,0 +1,9 @@
+"""
+Point-to-point connections handle a lot of communication needs, but passing the same
+information between many peers becomes challenging as the number of direct connec-
+tions grows. Sending messages separately to each recipient consumes additional pro-
+cessing time and bandwidth, which can be a problem for applications such as streaming
+video or audio. Using multicast to deliver messages to more than one endpoint at a time
+achieves better efficiency because the network infrastructure ensures that the packets
+are delivered to all recipients
+"""

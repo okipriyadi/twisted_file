@@ -1,0 +1,20 @@
+from twisted.internet import reactor, protocol
+class QuoteProtocol(protocol.Protocol):
+def __init__(self, factory):
+self.factory = factory
+def connectionMade(self):
+self.sendQuote()
+def sendQuote(self):
+self.transport.write(self.factory.quote)
+def dataReceived(self, data):
+print "Received quote:", data
+self.transport.loseConnection()
+class QuoteClientFactory(protocol.ClientFactory):
+def __init__(self, quote):
+self.quote = quote
+def buildProtocol(self, addr):
+return QuoteProtocol(self)
+def clientConnectionFailed(self, connector, reason):
+print 'connection failed:', reason.getErrorMessage()
+maybeStopReactor()
+def clientConnectionLost(self, connector, reason):

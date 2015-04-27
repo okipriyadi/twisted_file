@@ -1,0 +1,4 @@
+from twisted.internet import reactor, protocol
+class EchoClient(protocol.Protocol):
+    def connectionMade(self):
+        self.transport.write("Hello, world!")

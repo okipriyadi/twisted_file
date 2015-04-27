@@ -1,0 +1,7 @@
+"""
+Sockets transmit streams of bytes. Those bytes can contain text messages, as in the
+previous examples, or they can be made up of binary data that has been encoded for
+transmission. To prepare binary data values for transmission, pack them into a buffer with struct .
+This client program encodes an integer, a string of two characters, and a floatingpoint 
+value into a sequence of bytes that can be passed to the socket for transmission.
+"""

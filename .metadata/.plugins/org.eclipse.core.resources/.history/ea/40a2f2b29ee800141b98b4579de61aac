@@ -1,0 +1,6 @@
+"""
+TCP/IP clients can save a few steps by using the convenience function
+create_connection() to connect to a server. The function takes one argument, a
+two-value tuple containing the server address, and derives the best address to use for
+the connection
+"""

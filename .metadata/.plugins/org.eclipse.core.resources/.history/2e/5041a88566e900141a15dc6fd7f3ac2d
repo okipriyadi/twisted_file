@@ -1,0 +1,5 @@
+"""
+The echo server example from the socket section can be extended to watch for
+more than one connection at a time by using select() . The new version starts out by
+creating a nonblocking TCP/IP socket and configuring it to listen on an address.
+"""

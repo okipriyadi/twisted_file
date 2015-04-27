@@ -1,0 +1,12 @@
+MODULES_MANAGER_V2
+_00_pendahuluan|/home/kyi/Twisted/percobaan_twisted/_00_pendahuluan.py
+_01_echo_server|/home/kyi/Twisted/percobaan_twisted/_01_echo_server.py
+_02_echo_client|/home/kyi/Twisted/percobaan_twisted/_02_echo_client.py
+_06_Using_add_Callback|/home/kyi/Twisted/percobaan_twisted/_06_Using_add_Callback.py
+_07_using_add_errback|/home/kyi/Twisted/percobaan_twisted/_07_using_add_errback.py
+_08_registering_multiple_add_callback|/home/kyi/Twisted/percobaan_twisted/_08_registering_multiple_add_callback.py
+_10_Various_callbacks_errbacks|/home/kyi/Twisted/percobaan_twisted/_10_Various_callbacks_errbacks.py
+_11_Simple_HTTP_request|/home/kyi/Twisted/percobaan_twisted/_11_Simple_HTTP_request.py
+chatserver|/home/kyi/Twisted/percobaan_twisted/chatserver.py
+quoteclient|/home/kyi/Twisted/percobaan_twisted/quoteclient.py
+quoteserver|/home/kyi/Twisted/percobaan_twisted/quoteserver.py

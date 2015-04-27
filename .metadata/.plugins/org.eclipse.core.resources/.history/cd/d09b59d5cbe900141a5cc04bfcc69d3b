@@ -1,0 +1,5 @@
+"""
+Setting the shell argument to a true value causes subprocess to spawn an inter-
+mediate shell process, which then runs the command. The default is to run the command
+directly.
+"""

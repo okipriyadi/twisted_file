@@ -1,0 +1,20 @@
+"""
+From the programmer’s perspective, there are two essential differences between using
+a UNIX domain socket and an TCP/IP socket. First, the address of the socket is a path
+on the file system, rather than a tuple containing the server name and port. Second,
+the node created in the file system to represent the socket persists after the socket
+is closed and needs to be removed each time the server starts up. The echo server
+example from earlier can be updated to use UDS by making a few changes in the setup
+section.
+"""
+
+import socket
+import sys
+import os
+server_address = ’./uds_socket’
+# Make sure the socket does not already exist
+try:
+    os.unlink(server_address)
+except OSError:
+if os.path.exists(server_address):
+raise

@@ -1,0 +1,11 @@
+"""
+Sockets can be configured to act as a server and listen for incoming messages, or con-
+nect to other applications as a client. After both ends of a TCP/IP socket are connected,
+communication is bidirectional.
+Echo Server
+This sample program, based on the one in the standard library documentation, receives
+incoming messages and echos them back to the sender. It starts by creating a TCP/IP
+socket.
+"""
+import socket
+import sys

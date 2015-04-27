@@ -1,0 +1,6 @@
+"""
+getaddrinfo() takes several arguments for filtering the result list. The host and
+port values given in the example are required arguments. The optional arguments are
+family, socktype, proto, and flags. The optional values should be either 0 or one of the
+constants defined by socket .
+"""

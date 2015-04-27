@@ -1,0 +1,6 @@
+"""
+Sockets have two primary properties controlling the way they send data: 
+1. the address family => controls the OSI network layer protocol used, 
+2. the socket type => controls the transport layer protocol
+
+"""

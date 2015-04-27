@@ -1,0 +1,39 @@
+"""
+Socket adalah mekanisme komunikasi yang memungkinkan terjadinya pertukaran data antar program 
+atau proses baik dalam satu mesin maupun antar mesin. Gaya pemrograman socket sendiri 
+berawal dari sistem Unix BSD yang terkenal dengan kepeloporannya pada bidang penanganan jaringan, 
+sehingga sering disebut BSD Socket.
+
+Sockets have two primary properties controlling the way they send data: 
+1. the address family => controls the OSI network layer protocol used, 
+2. the socket type => controls the transport layer protocol
+
+Ada dua golongan socket di Unix yang paling umum dipakai yaitu:
+1. Socket Lokal atau AF_UNIX
+   Socket Lokal adalah socket yang melakukan komunikasi dengan perantaraan sebuah file yang biasanya 
+   diletakkan pada direktori /tmp atau /usr/tmp ataupun /var/tmp. Socket semacam ini digunakan umumnya 
+   terbatas untuk komunikasi antar aplikasi dalam satu mesin.
+2. Socket Networking atau AF_INET
+   Socket Networking ditujukan untuk komunikasi antar aplikasi antar mesin dalam 
+   lingkungan jaringan TCP/IP. Identifikasi socket dilakukan dengan sebuah service identifier 
+   yaitu berupa nomor port TCP/IP yang dapat di sambung oleh client.
+
+Python supports three address families. 
+1. AF_INET , is used for IPv4 Internet addressing.
+2. AF_INET6 is used for IPv6 Internet addressing.
+3. AF_UNIX is the address family for UNIX Domain Sockets (UDS)
+
+The socket type is usually either :
+1. SOCK_DGRAM for user datagram protocol (UDP)
+2. SOCK_STREAM for transmission control protocol (TCP)
+3. SOCK_RAW
+4. SOCK_RDM
+5. SOCK_SECPAKET
+
+- Socket addresses are represented as follows: A single string is used for the AF_UNIX address family.
+- A pair (host, port) is used for the AF_INET address family
+    where host is a string representing either a hostname in Internet domain notation like 'daring.cwi.nl' 
+    or an IPv4 address like '100.50.200.5', and port is an integer
+- For AF_INET6 address family, a four-tuple (host, port, flowinfo, scopeid) is used, where flowinfo and 
+    scopeid represents sin6_flowinfo and sin6_scope_id member in struct sockaddr_in6 in C
+"""

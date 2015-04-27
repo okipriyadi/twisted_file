@@ -1,0 +1,80 @@
+-- VERSION_4
+-- START DISKCACHE
+/home/kyi/Twisted/.metadata/.plugins/org.eclipse.core.resources/.projects/percobaan_twisted/com.python.pydev.analysis/v2_indexcache
+_11_Simple_HTTP_request|1430092739000|/home/kyi/Twisted/percobaan_twisted/_11_Simple_HTTP_request.py
+_07_using_add_errback|1429779590000|/home/kyi/Twisted/percobaan_twisted/_07_using_add_errback.py
+_06_Using_add_Callback|1429779475000|/home/kyi/Twisted/percobaan_twisted/_06_Using_add_Callback.py
+_02_echo_client|1429764692000|/home/kyi/Twisted/percobaan_twisted/_02_echo_client.py
+quoteclient|1429772350000|/home/kyi/Twisted/percobaan_twisted/quoteclient.py
+_01_echo_server|1429770867000|/home/kyi/Twisted/percobaan_twisted/_01_echo_server.py
+chatserver|1429773764000|/home/kyi/Twisted/percobaan_twisted/chatserver.py
+_10_Various_callbacks_errbacks|1430065735000|/home/kyi/Twisted/percobaan_twisted/_10_Various_callbacks_errbacks.py
+quoteserver|1429772291000|/home/kyi/Twisted/percobaan_twisted/quoteserver.py
+_08_registering_multiple_add_callback|1430059306000|/home/kyi/Twisted/percobaan_twisted/_08_registering_multiple_add_callback.py
+_00_pendahuluan|1430091487000|/home/kyi/Twisted/percobaan_twisted/_00_pendahuluan.py
+-- END DISKCACHE
+-- START DICTIONARY
+27
+11=QuoteFactory
+23=HTTPEchoProtocol.__init__
+19=EchoClient
+7=_02_echo_client
+18=HTTPEchoFactory
+27=ChatFactory.__init__
+8=_11_Simple_HTTP_request
+4=_07_using_add_errback
+12=QuoteProtocol
+3=chatserver
+13=HTTPEchoProtocol
+16=ChatProtocol
+15=ChatFactory
+1=_08_registering_multiple_add_callback
+17=EchoFactory
+21=QuoteProtocol.__init__
+5=_06_Using_add_Callback
+24=ChatProtocol.handle_REGISTER
+20=Echo
+14=QuoteClientFactory
+9=quoteclient
+6=_01_echo_server
+25=QuoteClientFactory.__init__
+22=ChatProtocol.__init__
+26=QuoteFactory.__init__
+2=_10_Various_callbacks_errbacks
+10=quoteserver
+-- END DICTIONARY
+-- START TREE 1
+12
+add|2|addBold!10@addItalic!10@
+cal|3|callback2!18@callback3!18@callback1!18@
+cha|2|ChatProtocol!25@ChatFactory!25@
+d|4|d!11@d!35@d!43@d!19@
+ech|4|Echo!49@EchoClient!57@EchoFactory!57@EchoFactory!49@
+err|3|errback1!18@errback3!18@errback2!18@
+htt|2|HTTPEchoProtocol!65@HTTPEchoFactory!65@
+may|1|maybeStopReactor!74@
+myc|1|myCallback!42@
+mye|1|myErrback!34@
+pri|1|printHTML!10@
+quo|6|QuoteFactory!81@quote_counter!75@QuoteClientFactory!73@QuoteProtocol!81@quotes!75@QuoteProtocol!73@
+-- END TREE
+-- START TREE 2
+17
+__i|7|__init__!11&82@__init__!12&82@__init__!13&66@__init__!14&74@__init__!12&74@__init__!15&26@__init__!16&26@
+bro|1|broadcastMessage!16&26@
+bui|6|buildProtocol!17&58@buildProtocol!15&26@buildProtocol!17&50@buildProtocol!11&82@buildProtocol!14&74@buildProtocol!18&66@
+cli|4|clientConnectionLost!14&74@clientConnectionFailed!14&74@clientConnectionFailed!17&58@clientConnectionLost!17&58@
+con|6|connectionLost!16&26@connectionMade!12&74@connectionMade!19&58@connectionMade!12&82@connectionLost!12&82@connectionMade!16&26@
+dat|4|dataReceived!12&74@dataReceived!12&82@dataReceived!20&50@dataReceived!19&58@
+fac|3|factory!21&83@factory!22&27@factory!21&75@
+get|1|getQuote!12&82@
+han|2|handle_CHAT!16&26@handle_REGISTER!16&26@
+lin|3|lines!23&67@lineReceived!16&26@lineReceived!13&66@
+nam|2|name!24&27@name!22&27@
+num|1|numConnections!11&83@
+quo|2|quote!25&75@quote!26&83@
+sen|2|sendQuote!12&74@sendResponse!13&66@
+sta|2|state!24&27@state!22&27@
+upd|1|updateQuote!12&82@
+use|1|users!27&27@
+-- END TREE

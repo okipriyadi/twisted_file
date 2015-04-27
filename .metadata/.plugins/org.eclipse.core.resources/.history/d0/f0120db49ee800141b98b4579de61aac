@@ -1,0 +1,15 @@
+"""
+TCP/IP clients can save a few steps by using the convenience function
+create_connection() to connect to a server. The function takes one argument, a
+two-value tuple containing the server address, and derives the best address to use for
+the connection
+"""
+
+import socket
+import sys
+def get_constants(prefix):
+    #Create a dictionary mapping socket module constants to their names.
+    return dict( (getattr(socket, n), n)
+                 for n in dir(socket)
+                 if n.startswith(prefix)
+                 )

@@ -1,0 +1,5 @@
+"""
+The example client program uses two sockets to demonstrate how the server with
+select() manages multiple connections at the same time. The client starts by con-
+necting each TCP/IP socket to the server.
+"""

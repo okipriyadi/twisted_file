@@ -1,0 +1,4 @@
+"""
+To prevent error messages from commands run through check_output() from
+being written to the console, set the stderr parameter to the constant STDOUT .
+"""

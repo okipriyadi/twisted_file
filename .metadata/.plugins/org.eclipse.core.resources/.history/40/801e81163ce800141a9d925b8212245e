@@ -1,0 +1,98 @@
+"""
+Socket adalah mekanisme komunikasi yang memungkinkan terjadinya pertukaran data antar program 
+atau proses baik dalam satu mesin maupun antar mesin. Gaya pemrograman socket sendiri 
+berawal dari sistem Unix BSD yang terkenal dengan kepeloporannya pada bidang penanganan jaringan, 
+sehingga sering disebut BSD Socket.
+
+Sockets have two primary properties controlling the way they send data: 
+1. the address family => controls the OSI network layer protocol used, 
+2. the socket type => controls the transport layer protocol
+
+Python supports three address families. 
+1. AF_INET , is used for IPv4 Internet addressing.
+2. AF_INET6 is used for IPv6 Internet addressing.
+3. AF_UNIX is the address family for UNIX Domain Sockets (UDS)
+
+The socket type is usually either :
+1. SOCK_DGRAM for user datagram protocol (UDP)
+2. SOCK_STREAM for transmission control protocol (TCP)
+3. SOCK_RAW
+4. SOCK_RDM
+5. SOCK_SECPAKET
+
+Ada dua golongan socket di Unix yang paling umum dipakai yaitu:
+1. Socket Lokal atau AF_UNIX
+   Socket Lokal adalah socket yang melakukan komunikasi dengan perantaraan sebuah file yang biasanya 
+   diletakkan pada direktori /tmp atau /usr/tmp ataupun /var/tmp. Socket semacam ini digunakan umumnya 
+   terbatas untuk komunikasi antar aplikasi dalam satu mesin.
+2. Socket Networking atau AF_INET
+   Socket Networking ditujukan untuk komunikasi antar aplikasi antar mesin dalam 
+   lingkungan jaringan TCP/IP. Identifikasi socket dilakukan dengan sebuah service identifier 
+   yaitu berupa nomor port TCP/IP yang dapat di sambung oleh client.
+
+Socket Networking memiliki beberapa jenis, yang paling umum digunakan yaitu:
+a. Socket Stream atau SOCK_STREAM
+   Socket Stream adalah socket komunikasi full-duplex berbasis aliran (stream) data. Pada model 
+   komunikasi Socket Stream, koneksi dua aplikasi harus dalam kondisi tersambung dengan benar 
+   untuk dapat bertukar data. Ini dapat dianalogikan seperti komunikasi telepon. 
+   Jika sambungan telepon di salah satu titik putus, maka komunikasi tidak dapat terjadi. 
+   Koneksi model seperti ini akan menjamin data dapat dipertukarkan dengan baik, namun memiliki 
+   kelemahan dalam hal penggunaan jalur data yang relatif besar dan tidak boleh terputus.
+b. Socket Datagram atau SOCK_DGRAM
+   Socket Datagram berkomunikasi dengan cara yang berbeda. Socket ini tidak membutuhkan koneksi 
+   yang tersambung dengan benar untuk mengirimkan dan menerima data. Model koneksi semacam ini 
+   tidak dapat menjamin data dapat dipertukarkan dengan baik, namun memiliki keunggulan dalam hal 
+   penggunaan jalur data yang minimal. Socket Datagram dapat dianalogikan dengan komunikasi yang 
+   terjadi pada kelas, misalnya pada saat guru melakukan broadcasting materi pelajaran untuk diterima 
+   oleh setiap murid. Tidak ada yang dapat menjamin materi pelajaran dapat diterima oleh semua murid 
+   dengan baik, kecuali diterapkan metoda rechecking. Rechecking ini dapat dilakukan baik oleh guru 
+   maupun murid. Guru bertanya untuk memastikan jawaban dari murid benar, atau murid bertanya untuk 
+   memastikan kebenaran materi yang diterimanya. Socket Datagram pun menggunakan metoda ini untuk 
+   menjamin pengiriman data dapat dilakukan dengan baik.
+
+
+
+- Socket addresses are represented as follows: A single string is used for the AF_UNIX address family.
+- A pair (host, port) is used for the AF_INET address family
+    where host is a string representing either a hostname in Internet domain notation like 'daring.cwi.nl' 
+    or an IPv4 address like '100.50.200.5', and port is an integer
+- For AF_INET6 address family, a four-tuple (host, port, flowinfo, scopeid) is used, where flowinfo and 
+    scopeid represents sin6_flowinfo and sin6_scope_id member in struct sockaddr_in6 in C
+
+Sekilas Tentang Socket, TCP Dan UDP
+Pengertian socket adalah interface pada jaringan yang menjadi titik komunikasi antarmesin pada Internet Protocol, dan tentunya tanpa komunikasi ini, tidak akan ada pertukaran data dan informasi jaringan.
+Socket terdiri dari elemen-elemen utama sebagai berikut:
+1. Protokol.
+2. Local IP.
+3. Local Port.
+4. Remote IP.
+5. Remote Port.
+
+Dalam komunikasi antara dua pihak, tentunya harus digunakan kesepakatan aturan dan format yang sama 
+agar komunikasi dapat dimengerti. Seperti halnya dua orang yang menggunakan bahasa yang sama, 
+maka bahasa di sini berfungsi sebagai protokol. Protokol yang digunakan dalam socket dapat 
+menggunakan TCP ataupun UDP.
+
+Contoh komunikasi sederhana adalah komunikasi antara komputer A dan komputer B. Baik komputer A
+maupun komputer B harus memiliki identitas unik, yang direpresentasikan oleh IP masing-masing. 
+Komunikasi yang terjadi melalui port, sehingga baik komputer A maupun komputer B harus memiliki 
+port yang dapat diakses satu sama lain.
+
+Pemrograman socket adalah cara untuk menggunakan komponen/API (Application Programming Interface) socket
+untuk membuat sebuah aplikasi. Aplikasi socket umumnya terdiri dari dua kategori berdasarkan 
+pengiriman datanya, yaitu:
+a. Datagram socket (menggunakan UDP).
+b. Stream socket (menggunakan TCP).
+
+Terdapat perlakuan yang berbeda antara UDP dan TCP, walaupun sama-sama berfungsi sebagai protokol 
+pertukaran data. UDP tidak memerlukan proses koneksi terlebih dahulu untuk dapat mengirimkan data, 
+paket-paket data yang dikirimkan UDP bisa jadi melalui rute yang berbeda-beda, sehingga hasil yang 
+diterima bisa jadi tidak berurutan.
+
+Contohnya jika aplikasi socket pengirim mengirimkan berturut-turut pesan 1, pesan 2, dan pesan 3, 
+maka aplikasi socket penerima belum tentu mendapatkan pesan yang berurutan dimulai dari pesan 1, 
+pesan 2, dan terakhir pesan 3. Bisa saja pesan 2 terlebih dulu diterima, menyusul pesan-pesan yang lain,
+atau berbagai kemungkinan lainnya. Bahkan, dapat terjadi pesan yang dikirimkan tidak sampai ke 
+penerima karena kegagalan pengiriman paket data.
+
+"""

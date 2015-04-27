@@ -1,0 +1,5 @@
+"""
+The UDP echo client is similar the server, but does not use bind() to attach its
+socket to an address. It uses sendto() to deliver its message directly to the server
+and recvfrom() to receive the response.
+"""

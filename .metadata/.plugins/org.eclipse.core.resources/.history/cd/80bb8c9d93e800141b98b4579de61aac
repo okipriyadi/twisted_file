@@ -1,0 +1,7 @@
+"""
+Looking Up Server Addresses
+getaddrinfo() converts the basic address of a service into a list of tuples with all
+the information necessary to make a connection. The contents of each tuple will vary,
+containing different network families or protocols.
+"""
+

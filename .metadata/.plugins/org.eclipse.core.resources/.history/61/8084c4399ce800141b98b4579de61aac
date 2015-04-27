@@ -1,0 +1,5 @@
+"""
+The client program sets up its socket differently from the way a server does. Instead
+of binding to a port and listening, it uses connect() to attach the socket directly to the
+remote address.
+"""

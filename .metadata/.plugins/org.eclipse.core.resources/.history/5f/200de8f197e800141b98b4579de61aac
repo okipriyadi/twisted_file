@@ -1,0 +1,4 @@
+"""The related functions inet_pton() and inet_ntop() work with both IPv4 and
+IPv6 addresses, producing the appropriate format based on the address family parameter
+passed in.
+"""

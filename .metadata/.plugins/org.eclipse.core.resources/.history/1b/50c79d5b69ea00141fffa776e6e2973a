@@ -1,0 +1,4 @@
+import subprocess
+print 'popen4:'
+proc = subprocess.Popen(’cat -; echo "to stderr" 1>&2’,
+shell=True,

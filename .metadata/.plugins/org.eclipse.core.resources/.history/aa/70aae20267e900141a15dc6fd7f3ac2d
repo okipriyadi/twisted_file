@@ -1,0 +1,29 @@
+"""
+The echo server example from the socket section can be extended to watch for
+more than one connection at a time by using select() . The new version starts out by
+creating a nonblocking TCP/IP socket and configuring it to listen on an address.
+"""
+
+import select
+import socket
+import sys
+import Queue
+
+# Create a TCP/IP socket
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.setblocking(0)
+# Bind the socket to the port
+server_address = (’localhost’, 10000)
+print >>sys.stderr, ’starting up on %s port %s’ % server_address
+server.bind(server_address)
+# Listen for incoming connections
+server.listen(5)
+
+"""
+The arguments to select() are three lists containing communication channels to
+monitor. The first is a list of the objects to be checked for incoming data to be read,
+the second contains objects that will receive outgoing data when there is room in their
+buffer, and the third includes those that may have an error (usually a combination of
+the input and output channel objects). The next step in the server is to set up the lists
+containing input sources and output destinations to be passed to select() .
+"""

@@ -1,0 +1,10 @@
+a=[(1,2),(2,3),(3,4)]
+hasil = list()
+
+for (x,y) in a :  hasil = hasil + [x] + [y]  
+
+print "Hasil = ",hasil
+        
+b = [1,2,3,4,5]
+
+d for nyo in b: print nyo

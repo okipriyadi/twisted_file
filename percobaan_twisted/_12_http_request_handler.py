@@ -1,3 +1,15 @@
+"""
+As always, we register a factory that generates instances of our protocol with the reactor.
+In this case, instead of subclassing protocol.Protocol directly, we are taking advantage
+of a higher-level API, http.HTTPChannel , which inherits from basic.LineReceiver
+and already understands the structure of an HTTP request and the numerous behaviors
+required by the HTTP RFCs
+
+Our MyHTTP protocol specifies how to process requests by setting its requestFactory
+instance variable to MyRequestHander , which subclasses http.Request
+
+
+"""
 from twisted.internet import reactor
 from twisted.web import http
 class MyRequestHandler(http.Request):
@@ -11,7 +23,7 @@ class MyRequestHandler(http.Request):
         if self.resources.has_key(self.path):
             self.write(self.resources[self.path])
         else:
-            self.setResponseCode(http.NOT_FOUND)
+            self.setResponseCode(http.NOT_FOUND) # setRespondCode memberikan code 200 jika resource tersedia dan #http.NOT_FOUND = send a 404, page not found 
             self.write("<h1>Not Found</h1>Sorry, no such resource.")
         self.finish()
         

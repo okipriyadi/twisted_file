@@ -42,4 +42,19 @@ methods:
 - basic.LineReceiver
   we don’t have to write our own boilerplate code for handling newline-delimited protocols
   
+  
+Tips mudah:
+1. Define a protocol class, subclassing twisted.internet.protocol.Protocol for
+arbitrary data or twisted.protocols.basic.LineReceiver for line-oriented pro‐
+tocols.
+2. Define a factory class, subclassing twisted.internet.protocol.Factory for
+servers and twisted.internet.protocol.ClientFactory for clients. That factory
+creates instances of the protocol and stores state shared across protocol instances.
+3. Clients use reactor.connectTCP to initiate a connection to a server. Invoking
+connectTCP registers callbacks with the reactor to notify your protocol when new
+data has arrived across a socket for processing. Servers use reactor.listenTCP to
+listen for and respond to client connections.
+4. Communication doesn’t start until reactor.run is called, which starts the reactor
+event loop.
+
 """

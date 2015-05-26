@@ -1,3 +1,8 @@
+"""
+When using LineReceiver , a client should send messages
+with sendLine and a server should process received messages in lineReceived .
+"""
+
 from twisted.internet.protocol import Factory
 from twisted.protocols.basic import LineReceiver
 from twisted.internet import reactor
@@ -29,6 +34,8 @@ class ChatProtocol(LineReceiver):
         self.broadcastMessage("%s has joined the channel." % (name,))
         self.name = name
         self.factory.users[name] = self
+        print "self  =", self
+        print "self.factory.users[name]",self.factory.users[name]
         self.state = "CHAT"
 
     def handle_CHAT(self, message):

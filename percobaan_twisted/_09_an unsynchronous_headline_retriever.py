@@ -1,14 +1,15 @@
 """
 uses a helpful reactor method called callLater , which you can use to
-schedule events. In this example, we use callLater in getHeadline to fake an asyn‐
-chronous event arriving after one second.
+schedule events. In this example, we use callLater in getHeadline to fake an asynchronous 
+event arriving after one second.
 """
 from twisted.internet import reactor, defer
+from twisted.python.failure import Failure
 
 class HeadlineRetriever(object):
     def processHeadline(self, headline):
         if len(headline) > 50:
-            self.d.errback("The headline ``%s'' is too long!" % (headline,))
+            self.d.errback(Failure(Exception("The headline ``%s'' is too long!" % (headline,))))
         else:
             self.d.callback(headline)
 
@@ -30,6 +31,6 @@ def printError(failure):
     reactor.stop()
     
 h = HeadlineRetriever()
-d = h.getHeadline("Breaking News: Twisted Takes Us to the Moon!")
+d = h.getHeadline("Breaking News: Twisted Takes Us to the Moon xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx!")
 d.addCallbacks(printData, printError)
 reactor.run()

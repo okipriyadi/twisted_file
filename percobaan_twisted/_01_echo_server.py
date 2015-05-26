@@ -5,16 +5,22 @@ In an event-driven program, program flow is determined by external events. It is
 by an event loop and the use of callbacks to trigger actions when events happen.
 Contrast this structure with two other common models: single-threaded (synchronous)
 and multithreaded programming.
+
+TCP echo servers job is to listen for TCP connections on a particular port and echo back anything
+it receives 
 """
 from twisted.internet import protocol, reactor
-class Echo(protocol.Protocol):
+class Echo(protocol.Protocol):#our own Echo protocol by subclassing protocol.Protocol
     def dataReceived(self, data): #dataReceived : Called when data is received across a transport.
-            print data
+            print "data =", data
             self.transport.write(data)
             
 class EchoFactory(protocol.Factory):
     def buildProtocol(self, addr):#method_to_buildprotocol, when connection from client made this function start
+        print "addr =", addr
         return Echo()
-
+    # karna build protocol hanya me-return protocol maka cara shortcut selain memakai buildProtolo yaitu
+    # dalam contoh kasus diatas method buildProtocol bisa dihilangkan dan diganti dengan protocol = Echo() 
+print "reactor start"
 reactor.listenTCP(8000, EchoFactory())
 reactor.run()

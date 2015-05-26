@@ -1,0 +1,15 @@
+"""
+Because Twisted applications run in an event loop, the application must not make
+blocking calls in the main thread or the entire event loop will stall. Because most data‐
+bases expose a blocking API, Twisted provides twisted.enterprise.adbapi as a non-
+blocking interface to the DB-API 2.0 API implemented by Python bindings for most
+popular databases, including MySQL, Postgres, and SQLite.
+Nonblocking Database Queries
+Switching from the blocking API to adbapi is a straightforward transforma‐
+tion: instead of creating individual database connections, use a connection from
+adbapi.ConnectionPool , which manages a pool of connections run in separate threads
+for you. Once you have a database cursor, instead of using the blocking execute and
+fetchall methods, use dbpool.runQuery to execute a SQL query and return the result.
+Example 8-1 demonstrates executing a nonblocking SELECT query on a hypothetical
+SQLite database called users.db (the errback has been omitted for brevity).
+"""

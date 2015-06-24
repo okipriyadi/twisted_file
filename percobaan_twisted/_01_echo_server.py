@@ -10,11 +10,15 @@ TCP echo servers job is to listen for TCP connections on a particular port and e
 it receives 
 """
 from twisted.internet import protocol, reactor
-class Echo(protocol.Protocol):#our own Echo protocol by subclassing protocol.Protocol
-    def dataReceived(self, data): #dataReceived : Called when data is received across a transport.
-            print "data =", data
-            self.transport.write(data)
-            
+from twisted.protocols.basic import LineOnlyReceiver
+#class Echo(protocol.Protocol):#our own Echo protocol by subclassing protocol.Protocol
+class Echo(LineOnlyReceiver):#our own Echo protocol by subclassing protocol.Protocol
+    #def dataReceived(self, data): #dataReceived : Called when data is received across a transport.
+    #        print "data =", repr(data), "finished"
+    #        self.transport.write(data)
+    def lineReceived(self, line):
+            print "data =", repr(line), "finished"
+            self.transport.write(line)
 class EchoFactory(protocol.Factory):
     def buildProtocol(self, addr):#method_to_buildprotocol, when connection from client made this function start
         print "addr =", addr
